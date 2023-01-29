@@ -29,14 +29,14 @@
 					<div class="nav-link">
 						<button class="courses-list-toggle" onclick="toggleCoursesList()">Курсы <span class="arrow"></span></button>
 						<ul class="courses-list">
-							<li class="courses-item"><a class="course-link" href="#courses">Управленческий коучинг</a></li>
-							<li class="courses-item"><a class="course-link" href="#courses">Android-разработка</a></li>
-							<li class="courses-item"><a class="course-link" href="#courses">Digital-маркетинг</a></li>
-							<li class="courses-item"><a class="course-link" href="#courses">Soft Skills for Hard Times</a></li>
-							<li class="courses-item"><a class="course-link" href="#courses">Разработчик игр на Unity</a></li>
-							<li class="courses-item"><a class="course-link" href="#courses">Веб-дизайнер</a></li>
-							<li class="courses-item"><a class="course-link" href="#courses">Fullstack-разработчик на Python</a></li>
-							<li class="courses-item"><a class="course-link" href="#courses">DevOps-инженер</a></li>
+							<li class="courses-item"><a class="course-link" href="#courses"><?php the_field('management-coaching'); ?></a></li>
+							<li class="courses-item"><a class="course-link" href="#courses"><?php the_field('android-development'); ?></a></li>
+							<li class="courses-item"><a class="course-link" href="#courses"><?php the_field('digital-marketing'); ?></a></li>
+							<li class="courses-item"><a class="course-link" href="#courses"><?php the_field('soft-skills'); ?></a></li>
+							<li class="courses-item"><a class="course-link" href="#courses"><?php the_field('unity-game-developer'); ?></a></li>
+							<li class="courses-item"><a class="course-link" href="#courses"><?php the_field('web-designer'); ?></a></li>
+							<li class="courses-item"><a class="course-link" href="#courses"><?php the_field('python-developer'); ?></a></li>
+							<li class="courses-item"><a class="course-link" href="#courses"><?php the_field('devops-engineer'); ?></a></li>
 						</ul>
 					</div>
 					<a class="nav-link" href="#about">О компании</a>
