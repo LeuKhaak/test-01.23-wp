@@ -26,7 +26,7 @@ Template Name: Home
 			</div>
 			<div class="main-image-wrapper">
 				<div class="main-image-background"></div>
-				<img class="main-image" src="<?php bloginfo('template_url'); ?>/assets/images/gift.png" alt="#">
+				<img class="main-image" src="<?php the_field('main-image'); ?>" alt="#">
 			</div>
 
 		</div>
@@ -185,37 +185,40 @@ Template Name: Home
 			</div>
 		</div>
 		<div class="about-command">
-			<button class="slider left"></button>
+			<button class="slider left" onclick="moveLeft()"></button>
 			<div class="persons-slider">
-				<div class="person">
-					<img class="photo" src="<?php bloginfo('template_url'); ?>/assets/images/photo-person-1.png" alt="#">
-					<div class="person-description">
-						<h4>Иван Иванов</h4>
-						<p>Senior Android Developer. Работал в Amazon Web services, Alibaba Group, Яндекс.</p>
+				<div class="slider-gallery" style="margin-left: 0px;">
+
+				<?php
+				global $post;
+
+				$myposts = get_posts([ 
+					'numberposts' => -1,
+					'category' => 4
+				]);
+
+				if( $myposts ){
+					foreach( $myposts as $post ){
+						setup_postdata( $post );
+				?>
+
+					<div class="person">
+					<?php the_post_thumbnail( 
+						array(180, 179),
+						array('class' => 'photo')
+					); ?>
+						<div class="person-description">
+							<h4><?php the_title(); ?></h4>
+							<p><?php the_content(); ?></p>
+						</div>
 					</div>
-				</div>
-				<div class="person">
-					<img class="photo" src="<?php bloginfo('template_url'); ?>/assets/images/photo-person-2.png" alt="#">
-					<div class="person-description">
-						<h4>Анна Иванова</h4>
-						<p>Руководитель группы по работе с рекламными агенствами Вконтакте. Работала со Сбером, Яндексом,
-							М-видио.
-						</p>
-					</div>
-				</div>
-				<div class="person">
-					<img class="photo" src="<?php bloginfo('template_url'); ?>/assets/images/photo-person-3.png" alt="#">
-					<div class="person-description">
-						<h4>Ирина Петрова</h4>
-						<p>Руководитель группы по работе с рекламными агенствами Вконтакте. Работала со Сбером, Яндексом,
-							М-видио.
-						</p>
-					</div>
+						
+				<?php } } wp_reset_postdata(); ?>				
+				
 				</div>
 			</div>
-			<button class="slider right"></button>
+			<button class="slider right" onclick="moveRight()"></button>				
 		</div>
-	</div>
 </section>
 <section class="feedback">
 	<div class="feedback-image-background"></div>

@@ -22,7 +22,6 @@ const closePopUp = () => {
 };
 
 const toggleCoursesList = () => {
-  // if (document.documentElement.clientWidth < 361) return;
   coursesList.classList.toggle("show");
   arrow.classList.toggle("rotation");
 };
@@ -32,4 +31,27 @@ const toggleMenu = () => {
   hamburger.classList.toggle("close-menu");
 };
 
-// courses-list
+const sliderGallery = document.querySelector(".slider-gallery ");
+
+const person = document.querySelector(".person");
+
+const list = sliderGallery.querySelectorAll(".person");
+
+let newMargin = 0;
+
+const moveLeft = () => {
+  const itemWidth = person.clientWidth;
+  const allWidth = itemWidth * list.length;
+  if (newMargin < allWidth - itemWidth) {
+    newMargin += itemWidth;
+    sliderGallery.style.marginLeft = `-${newMargin}px`;
+  }
+};
+
+const moveRight = () => {
+  const itemWidth = person.clientWidth;
+  if (newMargin > 0) {
+    newMargin -= itemWidth;
+    sliderGallery.style.marginLeft = `-${newMargin}px`;
+  }
+};

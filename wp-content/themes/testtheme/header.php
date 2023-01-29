@@ -43,9 +43,9 @@
 					<a class="nav-link" href="#">Акции</a>
 					<a class="nav-link" href="#contacts">Контакты</a>
 				</nav>
-				<a class="nav-link phone" href="#">+375(33) 637-30-79</a>
+				<a class="nav-link phone" href="#"><?php the_field('phone'); ?></a>
 				<div class="header-telegram">
-					<a class="telegram" href="#"></a>
+					<a class="telegram" href="<?php the_field('telegram-link'); ?>"></a>
 				</div>
 				<button class="hamburger" onclick="toggleMenu()"></button>
 			</div>

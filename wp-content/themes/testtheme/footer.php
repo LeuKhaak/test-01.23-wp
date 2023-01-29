@@ -7,9 +7,9 @@
 					<p>220140, Беларусь, г. Минск,<br>
 						ул. Мира 2, д. 22, офис 222</p>
 					<div class="social-media">
-						<a class="whatsapp" href="#"></a>
-						<a class="telegram" href="#"></a>
-						<a class="viber" href="#"></a>
+						<a class="whatsapp" href="<?php the_field('whatsapp-link'); ?>"></a>
+						<a class="telegram" href="<?php the_field('telegram-link'); ?>"></a>
+						<a class="viber" href="<?php the_field('viber-link'); ?>"></a>
 					</div>
 				</div>
 				<div class="footer-courses">
@@ -27,7 +27,7 @@
 				</div>
 				<div class="footer-contacts"><a name="contacts"></a>
 					<h4 class="footer-courses-title">Контакты</h4>
-					<a class="nav-link contact-link" href="#">+375(33) 637-30-79</a>
+					<a class="nav-link contact-link" href="#"><?php the_field('phone'); ?></a>
 					<a class="nav-link" href="#">sales@insaitika.com</a>
 				</div>
 			</div>
